@@ -1,29 +1,19 @@
 <?php
-   include("db_connect.php");
-   session_start();
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      
-      $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
-      $result = mysqli_query($db,$sql);
-      //$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      //$active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 1) {
-         session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
-         
-         header("location: admin.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-   }
+session_start();
+$username=$_POST['username'];
+$password=$_POST['password'];
+$con=mysqli_connect('localhost','root','');
+mysqli_select_db($con,'covid');
+$q="select * from admin where username='$username' && pwd='$password'";
+$result=mysqli_query($con,$q);
+$num=mysqli_num_rows($result);
+if($num==1)
+{
+	$_SESSION['username']=$username;
+	header('location:http://localhost/cv/admin.php');
+}
+else
+{
+	echo 'Invalid Id Password';
+}
 ?>
