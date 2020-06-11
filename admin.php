@@ -16,8 +16,8 @@
     <div>
         <Ul>
             <li><a href="http://localhost/cv/addHospital.html">Add New Hospital</a></li>
-            <li><a>Update Healthcare data</a></li>
-            <li><a>Update regional Cases</a></li>
+            <li><a href="http://localhost/cv/HcData.html">Update Healthcare data</a></li>
+            <li><a href="http://localhost/cv/CaseData.html"> Update regional Cases</a></li>
         </Ul>
     </div>
 </body>
