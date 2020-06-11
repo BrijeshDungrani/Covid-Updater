@@ -10,6 +10,15 @@
     
 </head>
 <body>
-    <h1>admin panel</h1>
+    <header>
+        Admin Panel
+    </header>
+    <div>
+        <Ul>
+            <li><a href="http://localhost/cv/addHospital.html">Add New Hospital</a></li>
+            <li><a>Update Healthcare data</a></li>
+            <li><a>Update regional Cases</a></li>
+        </Ul>
+    </div>
 </body>
 </html>
