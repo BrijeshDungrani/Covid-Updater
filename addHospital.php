@@ -11,7 +11,8 @@
 
 
 <body >
-        <div >  
+        <div > 
+		 
  <?php 
 	//include('Control.php');
 		$HospName=$_POST['HospName'];
