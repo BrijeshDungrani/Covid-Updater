@@ -17,20 +17,20 @@
 		$TodTotCon=$_POST['TodTotCon'];
 		$TodTotRec=$_POST['TodTotRec'];
 		$TodTotDea=$_POST['TodTotDea'];
+		$CaseDate=date("m/d/Y");
 
 
-		$sqlQuery="INSERT INTO casedetail (TodTotCon,TodTotRec,TodTotDea) VALUES ('$TodTotCon' , '$TodTotRec' , '$TodTotDea' )" ;
-		$result=mysqli_query($connect,$sqlQuery);  
+		$sqlQuery="INSERT INTO casedetail (CaseDate,TodTotCon,TodTotRec,TodTotDea) VALUES ('$CaseDate' , '$TodTotCon' , '$TodTotRec' , '$TodTotDea' )" ;
+		$result=mysqli_query($db,$sqlQuery);  
 					
+		include('CaseData.html');
 		if($result)
 			echo " <br/> The cases added successfully  !  ";
 		else
-			echo " <br/> The cases not added successfully  !  ";	
-			echo $TodTotDea
+			echo " <br/> The cases not added successfully  !  ";
+			echo $CaseDate;	
        
 ?>
-		   
-
  </div>
  </body>
  </html>

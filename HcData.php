@@ -14,15 +14,15 @@
         <div >  
  <?php 
 	
-		$HospName=$_POST['HospName'];
+		$Hospital=$_POST['HospName'];
 		$CurrOccBed=$_POST['CurrOccBed'];
 		$CurrOccVent=$_POST['CurrOccVent'];
-//		$TotBed=$_POST['TotBed'];
-//		$TotVent=$_POST['TotVent'];
+		$Entrydate=date("d/m/Y");
 
-		$sqlQuery="INSERT INTO hospdata (HospName,CurrOccBed,CurrOccVent) VALUES ('$HospName' , '$CurrOccBed' , '$CurrOccVent' )" ;
-		$result=mysqli_query($connect,$sqlQuery);  
-					
+		$sqlQuery="INSERT INTO hospdata (Entrydate,Hospital,CurrOccBed,CurrOccVent) VALUES ('$Entrydate' ,'$Hospital' , '$CurrOccBed' , '$CurrOccVent' )" ;
+		$result=mysqli_query($db,$sqlQuery);  
+		
+		include('HcData.html');
 		if($result)
 			echo " <br/> The current data added successfully  !  ";
 		else

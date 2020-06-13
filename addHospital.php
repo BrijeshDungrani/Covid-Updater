@@ -12,7 +12,7 @@
 
 <body >
         <div > 
-		 
+
  <?php 
 	//include('Control.php');
 		$HospName=$_POST['HospName'];
@@ -21,9 +21,9 @@
 		$TotBed=$_POST['TotBed'];
 		$TotVent=$_POST['TotVent'];
 
-		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent) VALUES ('$HodName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent')" ;
-		$result=mysqli_query($connect,$sqlQuery);  
-					
+		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent) VALUES ('$HospName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent')" ;
+		$result=mysqli_query($db,$sqlQuery);  
+		include('addHospital.html');
 		if($result)
 			echo " <br/> The Hospital added successfully  !  ";
 		else
