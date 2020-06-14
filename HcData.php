@@ -13,11 +13,12 @@
 <body >
         <div >  
  <?php 
-	
+    
+    
 		$Hospital=$_POST['HospName'];
 		$CurrOccBed=$_POST['CurrOccBed'];
 		$CurrOccVent=$_POST['CurrOccVent'];
-		$Entrydate=date("d/m/Y");
+		$Entrydate= date("Y-m-d H:i:s");
 
 		$sqlQuery="INSERT INTO hospdata (Entrydate,Hospital,CurrOccBed,CurrOccVent) VALUES ('$Entrydate' ,'$Hospital' , '$CurrOccBed' , '$CurrOccVent' )" ;
 		$result=mysqli_query($db,$sqlQuery);  

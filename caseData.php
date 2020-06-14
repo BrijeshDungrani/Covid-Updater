@@ -17,7 +17,7 @@
 		$TodTotCon=$_POST['TodTotCon'];
 		$TodTotRec=$_POST['TodTotRec'];
 		$TodTotDea=$_POST['TodTotDea'];
-		$CaseDate=date("m/d/Y");
+		$CaseDate= date("Y-m-d H:i:s");
 
 
 		$sqlQuery="INSERT INTO casedetail (CaseDate,TodTotCon,TodTotRec,TodTotDea) VALUES ('$CaseDate' , '$TodTotCon' , '$TodTotRec' , '$TodTotDea' )" ;
