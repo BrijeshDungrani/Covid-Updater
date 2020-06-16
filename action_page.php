@@ -10,7 +10,7 @@ $num=mysqli_num_rows($result);
 if($num==1)
 {
 	$_SESSION['username']=$username;
-	header('location:http://localhost/cv/admin.php');
+	include('home.html');
 }
 else
 {

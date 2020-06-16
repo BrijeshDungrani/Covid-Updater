@@ -28,7 +28,7 @@
 			echo " <br/> The cases added successfully  !  ";
 		else
 			echo " <br/> The cases not added successfully  !  ";
-			echo $CaseDate;	
+			
        
 ?>
  </div>

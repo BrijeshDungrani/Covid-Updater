@@ -14,24 +14,31 @@
         <div > 
 
  <?php 
-	//include('Control.php');
+		include('addHospital.html');
 		$HospName=$_POST['HospName'];
 		$Address=$_POST['Address'];
 		$HosType=$_POST['HosType'];
 		$TotBed=$_POST['TotBed'];
 		$TotVent=$_POST['TotVent'];
+		$Entrydate= date("Y-m-d H:i:s");
 
 		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent) VALUES ('$HospName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent')" ;
 		$result=mysqli_query($db,$sqlQuery);  
-		include('addHospital.html');
 		if($result)
 			echo " <br/> The Hospital added successfully  !  ";
 		else
-			echo " <br/> The Hospital not added successfully  !  ";	     
+			echo " <br/> The Hospital not added successfully  !  ";	
+			
+			
+		$sqlQuery1="INSERT INTO hospdata (Entrydate,Hospital,CurrOccBed,CurrOccVent) VALUES ('$Entrydate' ,'$HospName' , '$TotBed' , '$TotVent' )" ;
+		$result1=mysqli_query($db,$sqlQuery1); 
+		if($result1)
+			echo " <br/> The Hospital data added successfully  !  ";
+		else
+			echo " <br/> The Hospital data not added successfully  !  ";	     
        
 ?>
-		   
-
+		
  </div>
  </body>
  </html>

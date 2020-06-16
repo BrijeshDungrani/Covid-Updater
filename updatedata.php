@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add new Hospital</title>
+    <link rel="stylesheet" href="style.css"  type="text/css" />
+    <link rel="stylesheet" href="reset.css"  type="text/css" />
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
         crossorigin="anonymous" />
-        <link rel="stylesheet" href="style.css"  type="text/css" />
-        <link rel="stylesheet" href="reset.css"  type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
         crossorigin="anonymous"></script>
-      
-
+<style>
+    body {
+  background-image: url('img/hospBg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
 </head>
 
 <body>
@@ -40,41 +46,39 @@
             </nav>
             <br/>
                     
-
     <div class="row">
         <div class="col-md-3">
 
         </div>
         <div class="col-md-6">
-            <!-- Default form contact -->
-            <form class="text-center border border-light p-5" action="addHospital.php" method="post">
+        <!-- Default form contact -->
+       
+		<form class="text-center border border-light p-5" action="HcData.php" method="post">
+        <p class="h4 mb-4">Update Health Care Data</p>
+        <select class="browser-default custom-select mb-4" name="HospName">
+        <option value="" selected>Choose Hospital Type</option>
+        <?php 
+        include('connection.php');
+        session_start();
+        $sqlQuery= "select HospName from hospital";
+		$result=mysqli_query($db,$sqlQuery); 
+        //echo "<select name='HospName'>";
+        while( $row = mysqli_fetch_array($result) )
+		{
+            echo"<option value='".$row['HospName']."'>".$row['HospName']."</option>";           
+        }
+        //echo "</select>";
+?>
+        </select>
+        <input type="number" name="CurrOccBed" class="form-control mb-4" placeholder="Current Occupied Covid Beds">
+        <input type="number" name="CurrOccVent" class="form-control mb-4" placeholder="Current Occupied Ventilators">
 
-                <p class="h4 mb-4">Add New Hospital</p>
-
-                <!-- Name -->
-                <input type="text" name="HospName" class="form-control mb-4" placeholder="Hospital Name">
-
-                <!-- Email -->
-                <input type="text" name="Address" class="form-control mb-4" placeholder="Address">
-
-                <!-- Subject -->
-                
-                <select class="browser-default custom-select mb-4" name=HosType>
-                    <option value="" selected>Choose Hospital Type</option>
-                    <option value="1" >Government</option>
-                    <option value="2">Private</option>
-                </select>
-                <input type="number" name="TotBed" class="form-control mb-4" placeholder="Total Number of Covid Beds">
-                <input type="number" name="TotVent" class="form-control mb-4" placeholder="Total Number of Ventilators">
-
-
-            
-
-                <!-- Send button -->
-                <button class="btn btn-info btn-block" type="submit">Register</button>
-
-            </form>
-            <!-- Default form contact -->
+        <!-- Send button -->
+        <button class="btn btn-info btn-block" type="submit">Submit</button>
+		
+        </form>
+           
+         <!-- Default form contact -->
         </div>
         <div class="col-md-3">
 
