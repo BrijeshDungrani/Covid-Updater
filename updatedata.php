@@ -62,12 +62,10 @@
         session_start();
         $sqlQuery= "select HospName from hospital";
 		$result=mysqli_query($db,$sqlQuery); 
-        //echo "<select name='HospName'>";
         while( $row = mysqli_fetch_array($result) )
 		{
             echo"<option value='".$row['HospName']."'>".$row['HospName']."</option>";           
         }
-        //echo "</select>";
 ?>
         </select>
         <input type="number" name="CurrOccBed" class="form-control mb-4" placeholder="Current Occupied Covid Beds">
