@@ -1,7 +1,7 @@
 <?php 
 session_start();
-
-	echo "<center>You are Successfully logout....!!!!!</center> ";
-	include('login.php');
+session_destroy();
+	
+header("Location : http://localhost/cv/adminLogin.php",TRUE,301);
 	   
 ?>

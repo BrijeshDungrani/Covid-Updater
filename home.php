@@ -8,11 +8,10 @@
 
 <body>
     <header>
-  
-  <?php  session_start();
+        <?php session_start();
 if(!isset($_SESSION['username']))
-header('location:http://localhost/cv/adminLogin.php');
- ?>
+header('location:http://localhost/cv/index.php');
+?>
         <style>
         body {
             background-image: url('img/hospBg.jpg');
