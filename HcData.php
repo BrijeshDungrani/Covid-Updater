@@ -24,10 +24,10 @@
 		$result=mysqli_query($db,$sqlQuery);  
 		
 		include('updatedata.php');
-		if($result)
-			echo " <br/> The current data added successfully  !  ";
-		else
-			echo " <br/> The current data not added successfully  !  ";	     
+			if($result)
+				echo " <br/> The current data added successfully  !  ";
+			else
+				echo " <br/> This current data not added successfully  !  ";	   
        
 ?>
 		   
