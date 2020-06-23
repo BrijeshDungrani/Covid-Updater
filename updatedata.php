@@ -1,3 +1,14 @@
+<?php
+    session_start();
+  if(!isset($_SESSION["uname"])){
+    header("location: logout.php");
+   die();
+  }
+  if(!isset($_SESSION["password"])){
+    header("location: logout.php");
+   die();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,9 +48,9 @@
             <nav>
                 <ul>
     
-                    <li><a href="Addhospital.html">Add New hospital </a></li>
-                    <li><a href="updatedata.php">Update Hospital Data </a></li>
-                    <li><a href="CaseData.html">Add Today's Cases</a></li>  
+				<li><a href="Addhospital1.php">Add New hospital </a></li>
+				<li><a href="updatedata.php">Update Hospital Data </a></li>
+				<li><a href="CaseData1.php">Add Today's Cases</a></li> 
                     <li><a href="logout.php">Logout </a></li>
     
                 </ul>
@@ -56,7 +67,7 @@
 		<form class="text-center border border-light p-5" action="HcData.php" method="post">
         <p class="h4 mb-4">Update Health Care Data</p>
         <select class="browser-default custom-select mb-4" name="HospName">
-        <option value="" selected>Choose Hospital Type</option>
+        <option value="" selected>Choose Hospital </option>
         <?php 
         include('connection.php');
         session_start();

@@ -1,7 +1,9 @@
 <?php 
-session_start();
+        session_start();
+        session_unset();
+        session_destroy();
+		header("Location: index.php");
+		echo "please  login";
 
-	echo "<center>You are Successfully logout....!!!!!</center> ";
-	include('login.php');
 	   
 ?>
