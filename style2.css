@@ -231,31 +231,3 @@ body.mobile-nav-active #mobile-nav {
 #Totalcard{
     background-color: skyblue;
 }
-#covid19bedcard{
-    background-color: lightblue;
-    margin-top: 105px;
-}
-#covid19Ventcard{
-    background-color: lightblue;
-    margin-top: 15px;
-
-}
-#totalBed{
-    background-color: blue;
-    color: white;
-}
-#OccupiedBed{
-    background-color: #ffa500;
-    color: white;
-}
-#VacantBed{
-    background-color: #008000;
-    color: white;
-}
-
-.mt50B{
-    background-color: green;
-}
-.lt50B{
-    background-color: red;;
-}

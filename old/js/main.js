@@ -72,3 +72,15 @@ $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function () {
   }
 });
 //line
+
+
+$(function(){
+  $("tr").each(function(){
+    var col_val = $(this).find("td:eq(1)").text();
+    if (col_val >= 50){
+      $(this).addClass('mt50B');  //the selected class colors the row green//
+    } else {
+      $(this).addClass('lt50B');
+    }
+  });
+});
