@@ -66,9 +66,10 @@
                 <!-- Name -->
                 <input type="text" name="HospName" class="form-control mb-4" placeholder="Hospital Name">
 
-                <!-- Email -->
+                <!-- addrres -->
                 <input type="text" name="Address" class="form-control mb-4" placeholder="Address">
-
+                <!-- phone -->
+                <input type="number" name="phone" class="form-control mb-4" placeholder="phon no.">             
                 <!-- Subject -->
                 
                 <select class="browser-default custom-select mb-4" name=HosType>

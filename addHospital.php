@@ -27,9 +27,12 @@
 		$HosType=$_POST['HosType'];
 		$TotBed=$_POST['TotBed'];
 		$TotVent=$_POST['TotVent'];
+		$phone=$_POST['phone'];
 		$Entrydate= date("Y-m-d H:i:s");
-
-		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent) VALUES ('$HospName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent')" ;
+		$l=strlen($phone);
+		if($l==10)
+		{
+		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent,phone) VALUES ('$HospName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent', '$phone')" ;
 		$result=mysqli_query($db,$sqlQuery);  
 		include('addHospital1.php');
 
@@ -42,9 +45,12 @@
 		$sqlQuery1="INSERT INTO hospdata (Entrydate,Hospital,CurrOccBed,CurrOccVent) VALUES ('$Entrydate' ,'$HospName' , '$TotBed' , '$TotVent' )" ;
 		$result1=mysqli_query($db,$sqlQuery1); 
 		if($result1)
-			echo " The Hospital data added successfully  !  ";
+			echo " </br> The Hospital data added successfully  !  ";
 		else
-			echo " <br/> The Hospital data not added successfully  !  ";	     
+			echo " <br/> The Hospital data not added successfully  !  ";
+		}
+		else
+			echo "please enter correct phone number !"	     
        
 ?>
 		
