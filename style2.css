@@ -213,6 +213,7 @@ body.mobile-nav-active #mobile-nav {
 
 .cardrow{
     margin-top: 150px;
+    margin-left: 20px;
     
 }
 .card{
@@ -223,11 +224,65 @@ body.mobile-nav-active #mobile-nav {
     background-color: red;
 }
 #Recoverycard{
-    background-color: green;
+    background-color: lightgreen;
 }
 #Activecard{
     background-color: yellow;
 }
 #Totalcard{
     background-color: skyblue;
+}
+#covid19bedcard{
+    /* background-color: lightblue; */
+    margin-top: 105px;
+    padding: 20px;
+}
+#covid19Ventcard{
+    /* background-color: lightblue; */
+    margin-top: 15px;
+    padding: 20px;
+
+}
+#totalBed{
+    background-color: blue;
+    color: white;
+}
+#OccupiedBed{
+    background-color: #ffa500;
+    color: white;
+}
+#VacantBed{
+    background-color: #008000;
+    color: white;
+}
+
+.mt50B{
+    background-color: green;
+}
+.lt50B{
+    background-color: red;;
+}
+.bedTable{
+    margin-top: 10px;
+}
+.TableHeader{
+    text-align: center;
+    color: green;
+    margin: 10px;
+    padding-top: 25px;
+    text-decoration: underline;
+    text-decoration-color: green;
+}
+th{
+    background-color: lightgreen;
+    color: black;
+    cursor: pointer;
+}
+table, th, td {
+    border: 1px solid black;
+}
+.fa-sort{
+    padding-left: 10px;
+    color: lightgreen;
+    font-size: 20px;
 }
