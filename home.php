@@ -1,11 +1,13 @@
 <?php
-
-	  if(!isset($_SESSION["uname"])&&!isset($_SESSION["password"]))
-	  {
-		header("location: logout.php");
-		echo "please first login";
-	   die();
-	  }
+if(!isset($_SESSION)) 
+{ 
+session_start();
+if(!isset($_SESSION["uname"])&&!isset($_SESSION["password"]))
+{
+  header("location: logout.php");
+ die();
+}
+}
 ?>
 <html>
 <head>

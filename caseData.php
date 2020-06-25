@@ -1,5 +1,13 @@
 <?php include('connection.php');
+	if(!isset($_SESSION)) 
+    { 
 	session_start();
+	if(!isset($_SESSION["uname"])&&!isset($_SESSION["password"]))
+    {
+      header("location: logout.php");
+     die();
+	}
+}
  ?>
 <html>
 
@@ -23,7 +31,7 @@
 		$sqlQuery="INSERT INTO casedetail (CaseDate,TodTotCon,TodTotRec,TodTotDea) VALUES ('$CaseDate' , '$TodTotCon' , '$TodTotRec' , '$TodTotDea' )" ;
 		$result=mysqli_query($db,$sqlQuery);  
 					
-		include('CaseData.html');
+		include('CaseData.php');
 		if($result)
 			echo " <br/> The cases added successfully  !  ";
 		else
