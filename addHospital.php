@@ -1,5 +1,13 @@
 <?php include('connection.php');
+    if(!isset($_SESSION)) 
+    { 
 	session_start();
+	if(!isset($_SESSION["uname"])&&!isset($_SESSION["password"]))
+    {
+      header("location: logout.php");
+     die();
+	}
+}
  ?>
 <html>
 
@@ -14,7 +22,6 @@
         <div > 
 
  <?php 
-		include('addHospital.html');
 		$HospName=$_POST['HospName'];
 		$Address=$_POST['Address'];
 		$HosType=$_POST['HosType'];
@@ -24,6 +31,8 @@
 
 		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent) VALUES ('$HospName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent')" ;
 		$result=mysqli_query($db,$sqlQuery);  
+		include('addHospital1.php');
+
 		if($result)
 			echo " <br/> The Hospital added successfully  !  ";
 		else
@@ -33,7 +42,7 @@
 		$sqlQuery1="INSERT INTO hospdata (Entrydate,Hospital,CurrOccBed,CurrOccVent) VALUES ('$Entrydate' ,'$HospName' , '$TotBed' , '$TotVent' )" ;
 		$result1=mysqli_query($db,$sqlQuery1); 
 		if($result1)
-			echo " <br/> The Hospital data added successfully  !  ";
+			echo " The Hospital data added successfully  !  ";
 		else
 			echo " <br/> The Hospital data not added successfully  !  ";	     
        

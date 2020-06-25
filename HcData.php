@@ -1,5 +1,13 @@
 <?php include('connection.php');
-	session_start();
+if(!isset($_SESSION)) 
+{ 
+session_start();
+if(!isset($_SESSION["uname"])&&!isset($_SESSION["password"]))
+{
+  header("location: logout.php");
+ die();
+}
+}
  ?>
 <html>
 
@@ -25,9 +33,9 @@
 		
 		include('updatedata.php');
 			if($result)
-				echo " <br/> The current data added successfully  !  ";
+				echo " <br/><center> The current data added successfully  ! </center> ";
 			else
-				echo " <br/> This current data not added successfully  !  ";	   
+				echo " <br/><center> This current data not added successfully  ! </center> ";	   
        
 ?>
 		   
