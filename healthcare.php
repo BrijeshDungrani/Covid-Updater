@@ -14,7 +14,7 @@
     
     <div class="row">
         <div class="container" id="covid19bedcard">
-            <h3 style="padding-left: 20px; color: blue;">Covid-19 Beds</h3>
+            <a href="BedsDetail.php"><h3 style="padding-left: 20px; color: blue;">Covid-19 Beds</h3></a>
             <br>
             <div class="row">
                 <div class="card" id="totalBed" style="width: 12rem;">
@@ -41,7 +41,7 @@
     </div>
     <div class="row">
         <div class="container" id="covid19Ventcard">
-            <h3 style="padding-left: 20px; color: blue;">Covid-19 Ventilators</h3>
+        <a href="VentilatorDetails.php"><h3 style="padding-left: 20px; color: blue;">Covid-19 Ventilators</h3></a>
             <br>
             <div class="row">
                 <div class="card" id="totalBed" style="width: 12rem;">
