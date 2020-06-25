@@ -1,3 +1,4 @@
+<?php include('displayhc.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,19 +21,19 @@
                 <div class="card" id="totalBed" style="width: 12rem;">
                     <div class="card-body">
                         <h5 class="card-title">Total</h5>
-                        <p class="card-text">500</p>
+                        <p class="card-text"><?php echo $Totbed; ?></p>
                     </div>
                 </div>
                 <div class="card" id="OccupiedBed" style="width: 12rem;">
                     <div class="card-body">
                         <h5 class="card-title">Occupied</h5>
-                        <p class="card-text">185</p>
+                        <p class="card-text"><?php echo $CurrOccBed; ?></p>
                     </div>
                 </div>
                 <div class="card" id="VacantBed" style="width: 12rem;">
                     <div class="card-body">
                         <h5 class="card-title">Vacant</h5>
-                        <p class="card-text">150</p>
+                        <p class="card-text"><?php echo $curvecbed; ?></p>
                     </div>
                 </div>
             </div>
@@ -47,19 +48,19 @@
                 <div class="card" id="totalBed" style="width: 12rem;">
                     <div class="card-body">
                         <h5 class="card-title">Total</h5>
-                        <p class="card-text">500</p>
+                        <p class="card-text"><?php echo $Totvent; ?></p>
                     </div>
                 </div>
                 <div class="card" id="OccupiedBed" style="width: 12rem;">
                     <div class="card-body">
                         <h5 class="card-title">Occupied</h5>
-                        <p class="card-text">185</p>
+                        <p class="card-text"><?php echo $CurrOccVent; ?></p>
                     </div>
                 </div>
                 <div class="card" id="VacantBed" style="width: 12rem;">
                     <div class="card-body">
                         <h5 class="card-title">Vacant</h5>
-                        <p class="card-text">150</p>
+                        <p class="card-text"><?php echo $curvecvent; ?></p>
                     </div>
                 </div>
             </div>
