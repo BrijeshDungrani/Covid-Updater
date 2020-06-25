@@ -115,8 +115,8 @@ $(document).ready(function() {
 ///change sorting icon color
 $( function() {
   $('th').click( function() {
-    $('th').children().css('color', 'lightgreen')
-    $(this).children().css('color', 'darkgreen')
+    $('th').children().css('color', 'darkgreen')
+    $(this).children().css('color', 'white')
   } );
 } );
 
@@ -124,13 +124,16 @@ $( function() {
 ////
 
 
-var oTable = $('#dataTable1').DataTable({ 
-  'rowCallback': function(row, data, index){
-  if(data[2]> 200){
-      $(row).find('td:eq(3)').css('color', 'red');
-  }
-  if(data[2] == 150){
-      $(row).find('td:eq(2)').css('color', 'blue');
-  }
-}
+$(document).ready(function () {
+  $(".table td:nth-child(4)").each(function () {
+      if (parseInt($(this).text(), 10) > 50 ) {
+          $(this).parent("tr").css("background-color", "lightgreen");
+      }
+      if (parseInt($(this).text(), 10) < 50 ) {
+          $(this).parent("tr").css("background-color", "#FFFF99");
+      }
+      if (parseInt($(this).text(), 10) == 0 ) {
+          $(this).parent("tr").css("background-color", "red");
+      }
+  });
 });
