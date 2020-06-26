@@ -37,44 +37,31 @@
                 </tr>
             </tfoot>
             <tbody>
-                <tr>
-                    <td>Hospital 1</td>
-                    <td>Vedroad</td>
-                    <td>8887775554</td>
-                    <td>32</td>
-                    <td>100</td>
-                    <td>61</td>
+            <?php 
+        include('connection.php'); 
 
-                </tr>
-                <tr>
-                    <td>Hospital 1</td>
-                    <td>22</td>
-                    <td>150</td>
-                    <td>63</td>
-
-                </tr>
-                <tr>
-                    <td>Hospital 2</td>
-                    <td>54</td>
-                    <td>222</td>
-                    <td>66</td>
-
-                </tr>
-                <tr>
-                    <td>Hospital 3</td>
-                    <td>55</td>
-                    <td>210</td>
-                    <td>22</td>
-
-                </tr>
-
-                <tr>
-                    <td>Hospital 4</td>
-                    <td>77</td>
-                    <td>274 </td>
-                    <td>27</td>
-
-                </tr>
+        $sqlQuery= "select * from hospdata";
+        $result=mysqli_query($db,$sqlQuery); 
+        $sqlQuery1= "select * from hospital";
+        $result1=mysqli_query($db,$sqlQuery1); 
+       
+        while( $row1 = mysqli_fetch_array($result1))
+        {
+        $sqlQuery= "select CurrOccVent from hospdata where hid = '".$row1['hid']."' order by entrydate DESC";
+            $result=mysqli_query($db,$sqlQuery);
+            $row = mysqli_fetch_array($result);
+            $vecvent=$row1['TotVent'] - $row['CurrOccVent'];
+            echo '<tr>';
+            echo '<td>'.$row1['HospName'].'</td>'; 
+            echo '<td>'.$row1['Address'].'</td>';
+            echo '<td>'.$row1['phone'].'</td>';
+            echo '<td>'.$row1['TotVent'].'</td>';
+            echo '<td>'.$row['CurrOccVent'].'</td>';
+            echo '<td>'.$vecvent.'</td>';
+            echo '</tr>';
+        }
+        
+?>
             </tbody>
         </table>
     </div>

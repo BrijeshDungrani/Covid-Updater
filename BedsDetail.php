@@ -27,14 +27,23 @@
                 </tr>
             </thead>
             <tfoot>
-
+                <tr>
+                    <th>Hospital</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Total Beds</th>
+                    <th>Occupied Beds</th>
+                    <th>Vacant Beds</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                
        <?php 
        include('connection.php'); 
 
         $sqlQuery= "select * from hospdata";
         $result=mysqli_query($db,$sqlQuery); 
-        $CurrOccBed=0;
-        $CurrOccVent=0;
+
         $sqlQuery1= "select * from hospital";
         $result1=mysqli_query($db,$sqlQuery1); 
        
