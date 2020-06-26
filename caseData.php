@@ -31,7 +31,7 @@
 		$sqlQuery="INSERT INTO casedetail (CaseDate,TodTotCon,TodTotRec,TodTotDea) VALUES ('$CaseDate' , '$TodTotCon' , '$TodTotRec' , '$TodTotDea' )" ;
 		$result=mysqli_query($db,$sqlQuery);  
 					
-		include('CaseData.php');
+		include('CaseData1.php');
 		if($result)
 			echo " <br/> The cases added successfully  !  ";
 		else
