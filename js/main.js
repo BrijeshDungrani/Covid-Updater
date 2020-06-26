@@ -68,6 +68,22 @@ $(document).ready(function () {
 });
 
 
+////ventilator 
+
+$(document).ready(function () {
+    $(".table1 td:nth-child(6)").each(function () {
+        if (parseInt($(this).text(), 10) > 15 ) {
+            $(this).parent("tr").css("background-color", "lightgreen");
+        }
+        if (parseInt($(this).text(), 10) < 15 ) {
+            $(this).parent("tr").css("background-color", "#FFFF99");
+        }
+        if (parseInt($(this).text(), 10) == 0 ) {
+            $(this).parent("tr").css("background-color", "#FFB6C1");
+        }
+    });
+  });
+
 /// header mobile
 $(document).ready(function() {
 
