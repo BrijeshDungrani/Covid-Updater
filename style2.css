@@ -216,24 +216,34 @@ body.mobile-nav-active #mobile-nav {
     margin-left: 20px;
     padding-left: 40px;
     /* border: 1px black solid ; */
-    background-color: lightcyan;
+    background-color: whitesmoke;
     
 }
 .card{
     margin-left: 30px;
-    margin-bottom: 15px;  
+    margin-bottom: 15px; 
+    
 }
 #deathcard{
-    background-color: red;
+    color: red;
+    background-color: white;
+    font-size: xx-large;
 }
 #Recoverycard{
-    background-color: lightgreen;
+    color: green;
+    background-color: white;
+    font-size: xx-large;
+
 }
 #Activecard{
-    background-color: yellow;
+    color: goldenrod;
+    background-color: white;
+    font-size: xx-large;
 }
 #Totalcard{
-    background-color: skyblue;
+    color: blue;
+    background-color: white;
+    font-size: xx-large;
 }
 #covid19bedcard{
     /* background-color: lightblue; */
