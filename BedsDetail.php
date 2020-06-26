@@ -27,62 +27,34 @@
                 </tr>
             </thead>
             <tfoot>
-                <tr>
-                    <th>Hospital</th>
-                    <th>Address</th>
-                    <th>Contact</th>
-                    <th>Total Beds</th>
-                    <th>Occupied Beds</th>
-                    <th>Vacant Beds</th>
-                </tr>
-            </tfoot>
-            <tbody>
-                <tr>
-                    <td>Lok Nayak (LNJP)</td>
-                    <td>Jawahar Lal Nehru Marg</td>
-                    <td>011 23232400</td>
-                    <td>2000</td>
-                    <td>712</td>
-                    <td>1288</td>
 
-                </tr>
-                <tr>
-                    <td>Guru Teg Bahadur Hospital</td>
-                    <td>Shahdara</td>
-                    <td>9625900725</td>
-                    <td>1500</td>
-                    <td>273</td>
-                    <td>1227</td>
+       <?php 
+       include('connection.php'); 
 
-                </tr>
-                <tr>
-                    <td>Safdarjung (SJF)</td>
-                    <td>Ansari Nagar East</td>
-                    <td>011 26730000</td>
-                    <td>283</td>
-                    <td>277</td>
-                    <td>6</td>
-
-                </tr>
-                <tr>
-                    <td>NKS Hospital</td>
-                    <td>219,220,Sanjay Nagar,Gulabi Bagh</td>
-                    <td>011 23666666</td>
-                    <td>20</td>
-                    <td>20</td>
-                    <td>0</td>
-
-                </tr>
-
-                <tr>
-                    <td>Aakash Healthcare</td>
-                    <td>Dwarka sector-3</td>
-                    <td>8800015991</td>
-                    <td>100</td>
-                    <td>88</td>
-                    <td>12</td>
-
-
+        $sqlQuery= "select * from hospdata";
+        $result=mysqli_query($db,$sqlQuery); 
+        $CurrOccBed=0;
+        $CurrOccVent=0;
+        $sqlQuery1= "select * from hospital";
+        $result1=mysqli_query($db,$sqlQuery1); 
+       
+        while( $row1 = mysqli_fetch_array($result1))
+        {
+        $sqlQuery= "select CurrOccBed from hospdata where hid = '".$row1['hid']."' order by entrydate DESC";
+            $result=mysqli_query($db,$sqlQuery);
+            $row = mysqli_fetch_array($result);
+            $vecbed=$row1['TotBed'] - $row['CurrOccBed'];
+            echo '<tr>';
+            echo '<td>'.$row1['HospName'].'</td>'; 
+            echo '<td>'.$row1['Address'].'</td>';
+            echo '<td>'.$row1['phone'].'</td>';
+            echo '<td>'.$row1['TotBed'].'</td>';
+            echo '<td>'.$row['CurrOccBed'].'</td>';
+            echo '<td>'.$vecbed.'</td>';
+            echo '</tr>';
+        }
+        
+?>
                 </tr>
             </tbody>
         </table>
