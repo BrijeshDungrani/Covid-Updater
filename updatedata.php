@@ -1,13 +1,13 @@
 <?php
-    session_start();
-  if(!isset($_SESSION["uname"])){
-    header("location: logout.php");
-   die();
-  }
-  if(!isset($_SESSION["password"])){
-    header("location: logout.php");
-   die();
-  }
+   if(!isset($_SESSION)) 
+   { 
+   session_start();
+   if(!isset($_SESSION["uname"])&&!isset($_SESSION["password"]))
+   {
+     header("location: logout.php");
+    die();
+   }
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
