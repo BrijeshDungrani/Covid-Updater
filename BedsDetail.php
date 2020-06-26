@@ -10,7 +10,7 @@
         <div class = "availability" ><h5>&nbsp Availability &nbsp</h5></div>
         <div class = "availability" ><h5 style="background-color: lightgreen;">&nbsp More than 50 Beds &nbsp</h5></div>
         <div class = "availability" ><h5 style="background-color: #FFFF99;">&nbsp Less than 50 Beds &nbsp</h5></div>
-        <div class = "availability" ><h5 style="background-color: red;">&nbsp No Bed &nbsp</h5></div>
+        <div class = "availability" ><h5 style="background-color: #FFB6C1;">&nbsp No Bed &nbsp</h5></div>
     </div>
 </div>
 <div class="card-body bedTable">
@@ -38,41 +38,50 @@
             </tfoot>
             <tbody>
                 <tr>
-                    <td>Hospital 1</td>
-                    <td>Vedroad</td>
-                    <td>8887775554</td>
-                    <td>32</td>
+                    <td>Lok Nayak (LNJP)</td>
+                    <td>Jawahar Lal Nehru Marg</td>
+                    <td>011 23232400</td>
+                    <td>2000</td>
+                    <td>712</td>
+                    <td>1288</td>
+
+                </tr>
+                <tr>
+                    <td>Guru Teg Bahadur Hospital</td>
+                    <td>Shahdara</td>
+                    <td>9625900725</td>
+                    <td>1500</td>
+                    <td>273</td>
+                    <td>1227</td>
+
+                </tr>
+                <tr>
+                    <td>Safdarjung (SJF)</td>
+                    <td>Ansari Nagar East</td>
+                    <td>011 26730000</td>
+                    <td>283</td>
+                    <td>277</td>
+                    <td>6</td>
+
+                </tr>
+                <tr>
+                    <td>NKS Hospital</td>
+                    <td>219,220,Sanjay Nagar,Gulabi Bagh</td>
+                    <td>011 23666666</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>0</td>
+
+                </tr>
+
+                <tr>
+                    <td>Aakash Healthcare</td>
+                    <td>Dwarka sector-3</td>
+                    <td>8800015991</td>
                     <td>100</td>
-                    <td>61</td>
+                    <td>88</td>
+                    <td>12</td>
 
-                </tr>
-                <tr>
-                    <td>Hospital 1</td>
-                    <td>22</td>
-                    <td>150</td>
-                    <td>63</td>
-
-                </tr>
-                <tr>
-                    <td>Hospital 2</td>
-                    <td>54</td>
-                    <td>222</td>
-                    <td>66</td>
-
-                </tr>
-                <tr>
-                    <td>Hospital 3</td>
-                    <td>55</td>
-                    <td>210</td>
-                    <td>22</td>
-
-                </tr>
-
-                <tr>
-                    <td>Hospital 4</td>
-                    <td>77</td>
-                    <td>274 </td>
-                    <td>27</td>
 
                 </tr>
             </tbody>

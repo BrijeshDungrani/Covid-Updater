@@ -54,7 +54,7 @@ $( function() {
 
 
 $(document).ready(function () {
-  $(".table td:nth-child(4)").each(function () {
+  $(".table td:nth-child(6)").each(function () {
       if (parseInt($(this).text(), 10) > 50 ) {
           $(this).parent("tr").css("background-color", "lightgreen");
       }
@@ -62,7 +62,7 @@ $(document).ready(function () {
           $(this).parent("tr").css("background-color", "#FFFF99");
       }
       if (parseInt($(this).text(), 10) == 0 ) {
-          $(this).parent("tr").css("background-color", "red");
+          $(this).parent("tr").css("background-color", "#FFB6C1");
       }
   });
 });

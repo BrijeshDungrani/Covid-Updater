@@ -305,8 +305,15 @@ table, th, td {
 .navbar-nav{
     right: 20px;
 }
-.navbar-brand{
-   margin-right: 500px;
+.navbar-brand {
+    margin-right: 450px;
+    margin-top: -35px;
+    font-size: xx-large;
+}
+.navbar-light .navbar-nav .nav-link {
+    
+    font-size: larger;
+    margin-top: -30px;
 }
 body{
     overflow-x: hidden;
