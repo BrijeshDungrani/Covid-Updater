@@ -28,7 +28,12 @@ if(!isset($_SESSION["uname"])&&!isset($_SESSION["password"]))
 		$CurrOccVent=$_POST['CurrOccVent'];
 		$Entrydate= date("Y-m-d H:i:s");
 
-		$sqlQuery="UPDATE hospdata SET Entrydate='$Entrydate', CurrOccBed=$CurrOccBed, CurrOccVent='$CurrOccVent' WHERE Hospital='$Hospital'" ;
+		$sq = "select hid from hospital where HospName ='".$Hospital."'";
+		$re = mysqli_query($db,$sq);
+		$rw = mysqli_fetch_array($re);
+		$hid=$rw['hid'];
+
+		$sqlQuery="INSERT INTO hospdata (Entrydate,hid,CurrOccBed,CurrOccVent) VALUES ('$Entrydate' ,'$hid' , '$CurrOccBed' , '$CurrOccVent' )" ;
 		$result=mysqli_query($db,$sqlQuery);  
 		
 		include('updatedata.php');

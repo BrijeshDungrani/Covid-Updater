@@ -40,9 +40,13 @@
 			echo " <br/> The Hospital added successfully  !  ";
 		else
 			echo " <br/> The Hospital not added successfully  !  ";	
+		
+		$sq = "select hid from hospital where HospName ='".$HospName."'";
+		$re = mysqli_query($db,$sq);
+		$rw = mysqli_fetch_array($re);
+		$hid=$rw['hid'];
 			
-			
-		$sqlQuery1="INSERT INTO hospdata (Entrydate,Hospital,CurrOccBed,CurrOccVent) VALUES ('$Entrydate' ,'$HospName' , '$TotBed' , '$TotVent' )" ;
+		$sqlQuery1="INSERT INTO hospdata (Entrydate,hid,CurrOccBed,CurrOccVent) VALUES ('$Entrydate' ,'$hid' , '$TotBed' , '$TotVent' )" ;
 		$result1=mysqli_query($db,$sqlQuery1); 
 		if($result1)
 			echo " </br> The Hospital data added successfully  !  ";

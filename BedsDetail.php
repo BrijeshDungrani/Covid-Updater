@@ -41,6 +41,9 @@
 
                 </tr>
                 <tr>
+                    
+                </tr>
+                <tr>
                     <td>Hospital 1</td>
                     <td>22</td>
                     <td>150</td>
