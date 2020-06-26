@@ -18,7 +18,6 @@
             $row = mysqli_fetch_array($result);
             $CurrOccBed += $row['CurrOccBed'];
             $CurrOccVent += $row['CurrOccVent'];
-
         }
         $curvecbed= $Totbed-$CurrOccBed;
         $curvecvent= $Totvent-$CurrOccVent;
