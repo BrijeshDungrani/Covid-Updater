@@ -16,25 +16,25 @@
         <div class="card" id="Totalcard" style="width: 20rem;">
             <div class="card-body">
                 <h5 class="card-title">Confirmed</h5>
-                <p class="card-text">26588</p>
+                <p class="card-text"><?php echo $TodTotCon; ?></p>
             </div>
         </div>
         <div class="card" id="Activecard" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Active </h5>
-                <p class="card-text">26588</p>
+                <p class="card-text"><?php echo $TodTotAct; ?></p>
             </div>
         </div>
         <div class="card" id="Recoverycard" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Recovered</h5>
-                <p class="card-text">41437</p>
+                <p class="card-text"><?php echo $TodTotRec; ?></p>
             </div>
         </div>
         <div class="card" id="deathcard" style="width: 18rem">
             <div class="card-body">
                 <h5 class="card-title">Death</h5>
-                <p class="card-text">2365</p>
+                <p class="card-text"><?php echo $TodTotDea; ?></p>
             </div>
         </div>
 

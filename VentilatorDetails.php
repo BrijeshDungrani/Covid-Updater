@@ -59,14 +59,10 @@
             echo '<td>'.$row['CurrOccVent'].'</td>';
             echo '<td>'.$vecvent.'</td>';
             echo '</tr>';
-        }
-        
+        }   
 ?>
             </tbody>
         </table>
     </div>
 </div>
 </div>
-<script>
-
-</script>
