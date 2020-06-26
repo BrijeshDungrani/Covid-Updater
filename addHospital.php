@@ -30,7 +30,7 @@
 		$phone=$_POST['phone'];
 		$Entrydate= date("Y-m-d H:i:s");
 		$l=strlen($phone);
-		if($l==10)
+		if($l<=15)
 		{
 		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent,phone) VALUES ('$HospName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent', '$phone')" ;
 		$result=mysqli_query($db,$sqlQuery);  

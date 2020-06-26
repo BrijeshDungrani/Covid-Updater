@@ -8,14 +8,14 @@
     <br>
     <div class="row">
         <div class = "availability" ><h5>&nbsp Availability &nbsp</h5></div>
-        <div class = "availability" ><h5 style="background-color: lightgreen;">&nbsp More than 50 Ventilators &nbsp</h5></div>
-        <div class = "availability" ><h5 style="background-color: #FFFF99;">&nbsp Less than 50 Ventilators &nbsp</h5></div>
+        <div class = "availability" ><h5 style="background-color: lightgreen;">&nbsp More than 15 Ventilators &nbsp</h5></div>
+        <div class = "availability" ><h5 style="background-color: #FFFF99;">&nbsp Less than 15 Ventilators &nbsp</h5></div>
         <div class = "availability" ><h5 style="background-color: #FFB6C1;">&nbsp No Ventilators &nbsp</h5></div>
     </div>
 </div>
 <div class="card-body bedTable">
     <div class="table-responsive">
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <table class="table     table1 table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <tr>
                     <th>Hospital<i class="fa fa-sort"></i></th>
