@@ -69,7 +69,7 @@
                 <!-- addrres -->
                 <input type="text" name="Address" class="form-control mb-4" placeholder="Address">
                 <!-- phone -->
-                <input type="number" name="phone" class="form-control mb-4" placeholder="phone no.">             
+                <input type="number" name="phone" class="form-control mb-4" placeholder="Contact No">             
                 <!-- Subject -->
                 
                 <select class="browser-default custom-select mb-4" name=HosType>
