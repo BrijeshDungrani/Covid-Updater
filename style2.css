@@ -212,8 +212,11 @@ body.mobile-nav-active #mobile-nav {
 }
 
 .cardrow{
-    margin-top: 150px;
+    padding-top: 150px;
     margin-left: 20px;
+    padding-left: 40px;
+    /* border: 1px black solid ; */
+    background-color: lightcyan;
     
 }
 .card{
@@ -234,8 +237,10 @@ body.mobile-nav-active #mobile-nav {
 }
 #covid19bedcard{
     /* background-color: lightblue; */
-    margin-top: 105px;
-    padding: 20px;
+    /* margin-top: 105px; */
+    padding: 30px;
+    padding-left: 35px;
+    
 }
 #covid19Ventcard{
     /* background-color: lightblue; */
@@ -297,3 +302,12 @@ table, th, td {
     
 }
 
+.navbar-nav{
+    right: 20px;
+}
+.navbar-brand{
+   margin-right: 500px;
+}
+body{
+    overflow-x: hidden;
+}

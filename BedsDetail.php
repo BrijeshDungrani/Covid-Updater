@@ -19,22 +19,28 @@
             <thead>
                 <tr>
                     <th>Hospital<i class="fa fa-sort"></i></th>
-                    <th>Total<i class="fa fa-sort"></th>
-                    <th>Occupied<i class="fa fa-sort"></th>
-                    <th>Vacant<i class="fa fa-sort"></th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Total Beds<i class="fa fa-sort"></i></th>
+                    <th>Occupied Beds<i class="fa fa-sort"></i></th>
+                    <th>Vacant Beds<i class="fa fa-sort"></i></th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
                     <th>Hospital</th>
-                    <th>Total</th>
-                    <th>Occupied</th>
-                    <th>Vacant</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Total Beds</th>
+                    <th>Occupied Beds</th>
+                    <th>Vacant Beds</th>
                 </tr>
             </tfoot>
             <tbody>
                 <tr>
                     <td>Hospital 1</td>
+                    <td>Vedroad</td>
+                    <td>8887775554</td>
                     <td>32</td>
                     <td>100</td>
                     <td>61</td>
