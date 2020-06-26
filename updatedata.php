@@ -47,7 +47,7 @@
             </header>
             <nav>
                 <ul>
-                <li><a href="home.php">Home </a></li>
+                <li><a href="Dashboard.php">Home </a></li>
 				<li><a href="Addhospital1.php">Add New hospital </a></li>
 				<li><a href="updatedata.php">Update Hospital Data </a></li>
 				<li><a href="CaseData1.php">Add Today's Cases</a></li> 
