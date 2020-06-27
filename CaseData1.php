@@ -76,7 +76,7 @@ if(!isset($_SESSION["uname"])&&!isset($_SESSION["password"]))
             
 
                 <!-- Send button -->
-                <button class="btn btn-info btn-block" type="submit">Send</button>
+                <button class="btn btn-info btn-block" type="submit">Submit</button>
 
             </form>
             <!-- Default form contact -->
