@@ -4,7 +4,31 @@
     <h3>COvid -19 Beds</h3>
 </div>
 <div>
+<?php
+function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+{
+  // convert from degrees to radians
+  $latFrom = deg2rad($latitudeFrom);
+  $lonFrom = deg2rad($longitudeFrom);
+  $latTo = deg2rad($latitudeTo);
+  $lonTo = deg2rad($longitudeTo);
+ 
+  $latDelta = $latTo - $latFrom;
+  $lonDelta = $lonTo - $lonFrom;
+ 
+  $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+    cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+  return $angle * $earthRadius;
+}
+ $x = geoDistance(21.2347797,72.8188308,21.214920,72.828629,6371000);
+ $y = geoDistance(21.2347797,72.8188308,21.235542,72.816449,6371000);
+ $z = geoDistance(21.2347797,72.8188308,21.222301,72.821043,6371000);
+?>
+
     <h3 class="TableHeader">Covid Bed Availability</h3>
+    <?php echo "<h3> $x </h3>" ?>
+    <?php echo "<h3> $y </h3>" ?>
+    <?php echo "<h3> $z </h3>" ?>
     <br>
     <div class="row">
         <div class = "availability" ><h5>&nbsp Availability &nbsp</h5></div>
@@ -64,6 +88,10 @@
             echo '<td>'.$vecbed.'</td>';
             echo '</tr>';
         }
+
+        
+
+
         
 ?>
                 </tr>

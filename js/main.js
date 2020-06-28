@@ -110,6 +110,7 @@ function showPosition(position) {
     
     lon = position.coords.latitude;
     lat = position.coords.longitude;
+   
     //prompt(lon,lat);
 //   x.innerHTML = "Latitude: " + position.coords.latitude + 
 //   "<br>Longitude: " + position.coords.longitude;
@@ -165,3 +166,6 @@ function showPosition(position) {
 // }
 
 // $('#nearbystops').append(html);
+
+//location
+
