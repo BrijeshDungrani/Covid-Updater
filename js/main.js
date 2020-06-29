@@ -54,7 +54,7 @@ $( function() {
 
 
 $(document).ready(function () {
-  $(".table td:nth-child(6)").each(function () {
+  $(".table td:nth-child(9)").each(function () {
       if (parseInt($(this).text(), 10) > 50 ) {
           $(this).parent("tr").css("background-color", "lightgreen");
       }
@@ -110,12 +110,19 @@ function showPosition(position) {
     
     lon = position.coords.latitude;
     lat = position.coords.longitude;
-   
+    
     //prompt(lon,lat);
 //   x.innerHTML = "Latitude: " + position.coords.latitude + 
 //   "<br>Longitude: " + position.coords.longitude;
 }
 
+
+
+
+  
+ 
+
+  
 
 
 /// find neaby hospitals 
