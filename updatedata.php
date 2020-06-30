@@ -36,15 +36,13 @@
 <body>
 <?php include('header.php'); ?>
                     
-    <div class="row">
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-6">
-        <!-- Default form contact -->
+    
+<h2><center>Update Health Care Data</center></h2>
+        <div class="container row">
+            <!-- Default form contact -->
+            <center>
        
 		<form class="text-center border border-light p-5" action="HcData.php" method="post">
-        <p class="h4 mb-4">Update Health Care Data</p>
         <select class="browser-default custom-select mb-4" name="HospName">
         <option value="" selected>Choose Hospital </option>
         <?php 
@@ -62,15 +60,13 @@
         <input type="number" name="CurrOccVent" class="form-control mb-4" placeholder="Current Occupied Ventilators">
 
         <!-- Send button -->
-        <button class="btn btn-info btn-block" type="submit">Submit</button>
+        <input class="btn btn-info btn-block" type="submit">
 		
         </form>
            
          <!-- Default form contact -->
-        </div>
-        <div class="col-md-3">
-
-        </div>
+       
+    </center>
     </div>
 </body>
 

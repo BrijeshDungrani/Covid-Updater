@@ -32,15 +32,13 @@
     <?php include('header.php'); ?>
                     
 
-    <div class="row">
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-6">
+    <h2><center>Add New Hospital</center></h2>
+        <div class="container row">
             <!-- Default form contact -->
+            <center>
             <form class="text-center border border-light p-5" action="addHospital.php" method="post">
 
-                <p class="h4 mb-4">Add New Hospital</p>
+                
 
                 <!-- Name -->
                 <input type="text" name="HospName" class="form-control mb-4" placeholder="Hospital Name">
@@ -63,14 +61,12 @@
             
 
                 <!-- Send button -->
-                <button class="btn btn-info btn-block" type="submit">Register</button>
+                <input class="btn btn-info btn-block" type="submit">
 
             </form>
             <!-- Default form contact -->
-        </div>
-        <div class="col-md-3">
-
-        </div>
+</center>
+        
     </div>
 </body>
 
