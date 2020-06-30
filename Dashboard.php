@@ -132,26 +132,26 @@ window.onload = function(){
             <div class="card" id="Totalcard" style="width: 20rem;">
                 <div class="card-body">
                     <h5 class="card-title">Confirmed</h5>
-                    <p class="card-text" id="DelConf"></p>
+                    <h1 class="card-text" id="DelConf"></h1>
 
                 </div>
             </div>
             <div class="card" id="Activecard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Active </h5>
-                    <p class="card-text" id="DelActive"><script></script></p>
+                    <h1 class="card-text" id="DelActive"><script></script></h1>
                 </div>
             </div>
             <div class="card" id="Recoverycard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Recovered</h5>
-                    <p class="card-text" id="DelRec"></p>
+                    <h1 class="card-text" id="DelRec"></h1>
                 </div>
             </div>
             <div class="card" id="deathcard" style="width: 18rem">
                 <div class="card-body">
                     <h5 class="card-title">Death</h5>
-                    <p class="card-text" id="DelDeaths"></p>
+                    <h1 class="card-text" id="DelDeaths"></h1>
                 </div>
             </div>
         </div>
@@ -223,13 +223,13 @@ window.onload = function(){
         <div class="row">
             <div class="col-xl-6">
                 <div class="card mb-4">
-                    <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Total Cases Line chart</div>
+                    <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Confirm Cases (Delhi)</div>
                     <div class="card-body"><canvas id="linechart" width="100%" height="40"></canvas></div>
                 </div>
             </div>
             <div class="col-xl-6">
                 <div class="card mb-4">
-                    <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Line Graph</div>
+                    <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Recovery (Delhi)</div>
                     <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
                 </div>
             </div>
