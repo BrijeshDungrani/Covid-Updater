@@ -11,7 +11,7 @@
 
 </head>
 <script>
-   
+
 
 
 </script>
@@ -22,17 +22,27 @@
             <h2>Delhi Covid-19</h2>
         </div>
         <div class="row">
-            <div class="card" id="Totalcard" style="width: 20rem;">
+            <div class="card" id="Totalcard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Confirmed</h5>
-                    <h1 class="card-text" id="Dtotal_confirmed"></h1>
+                    <div class="card-text row">
+                        <div>
+                            <h1 id="Dtotal_confirmed"></h1>
+                        </div>
+                        <div class="card-Today">
+                        
+                            <h5>+44</h5>
+                        </div>
+                    </div>
 
                 </div>
             </div>
             <div class="card" id="Activecard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Active </h5>
-                    <h1 class="card-text" id="Dtotal_active"><script></script></h1>
+                    <h1 class="card-text" id="Dtotal_active">
+                        <script></script>
+                    </h1>
                 </div>
             </div>
             <div class="card" id="Recoverycard" style="width: 18rem;">
@@ -117,13 +127,13 @@
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Confirm Cases (Delhi)</div>
-                    <div class="card-body"><canvas id="linechart" width="100%" height="40"></canvas></div>
+                    <div class="card-body"><canvas id="myChart2" width="100%" height="40"></canvas></div>
                 </div>
             </div>
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Recovery (Delhi)</div>
-                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                    <div class="card-body"><canvas id="myChart3" width="100%" height="40"></canvas></div>
                 </div>
             </div>
         </div>
@@ -133,7 +143,7 @@
             <h2>India Covid-19</h2>
         </div>
         <div class="row">
-            <div class="card" id="Totalcard" style="width: 20rem;">
+            <div class="card" id="Totalcard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Confirmed</h5>
                     <h1 class="card-text" id="total_confirmed"></h1>
@@ -162,21 +172,22 @@
     </div>
 
     <div class="container">
-   <div class="table-responsive">
-    <h1 align="center">Covid-19 Dashboard</h1>
-    <br />
-    <div align="center">
-     
-    </div>
-    <br />
-    <div id="covid_table">
-    </div>
-    <canvas id = "myChart1">
+        <div class="table-responsive">
+            <div class="tableTitle">
+                <h1 align="center">Covid-19 Indian Dashboard</h1>
+            </div>
+            <br />
+            <div align="center">
 
-    </canvas>
-    
-   </div>
-  </div>
+            </div>
+            <br />
+            <div id="covid_table">
+            </div>
+            <canvas id="myChart1">
+            </canvas>
+
+        </div>
+    </div>
 </body>
 
 </html>

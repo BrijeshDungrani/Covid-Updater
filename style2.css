@@ -333,3 +333,18 @@ body{
     margin-bottom: 20px;
     margin-top: -60px;
 }
+.tableTitle{
+    margin-top: 20px;
+}
+.table3 tr:nth-child(even){
+    background-color: #F2F2F2;
+}
+
+.card-text{
+    padding-left: 15px;
+}
+.card-Today{
+    padding-top: 15px;
+    padding-left: 15px;
+
+}
