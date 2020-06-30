@@ -2,8 +2,6 @@
        include('connection.php');
         session_start();
 
-
-
         $sqlQuery1= "select * from hospital";
         $result1=mysqli_query($db,$sqlQuery1); 
        
