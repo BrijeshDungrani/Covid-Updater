@@ -328,3 +328,8 @@ table, th, td {
 body{
     overflow-x: hidden;
 }
+.cardTitle{
+    padding-left: 100px;
+    margin-bottom: 20px;
+    margin-top: -60px;
+}
