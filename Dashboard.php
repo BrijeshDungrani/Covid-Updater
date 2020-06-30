@@ -138,8 +138,8 @@
             </div>
         </div>
     </div>
-    <div class="cardrow">
-        <div class="cardTitle">
+    <div class="cardrow" id ="IndiCardTitle">
+        <div class="cardTitle" >
             <h2>India Covid-19</h2>
         </div>
         <div class="row">
