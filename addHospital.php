@@ -34,7 +34,6 @@
 		{
 		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent,phone) VALUES ('$HospName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent', '$phone')" ;
 		$result=mysqli_query($db,$sqlQuery);  
-		include('addHospital1.php');
 
 		if($result)
 			echo " <br/> The Hospital added successfully  !  ";
@@ -54,7 +53,9 @@
 			echo " <br/> The Hospital data not added successfully  !  ";
 		}
 		else
-			echo "please enter correct phone number !"	     
+			echo "please enter correct phone number !";	    
+			
+		header("Location: addHospital1.php");
        
 ?>
 		

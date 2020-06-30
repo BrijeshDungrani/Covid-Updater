@@ -36,12 +36,12 @@ if(!isset($_SESSION["uname"])&&!isset($_SESSION["password"]))
 		$sqlQuery="INSERT INTO hospdata (Entrydate,hid,CurrOccBed,CurrOccVent) VALUES ('$Entrydate' ,'$hid' , '$CurrOccBed' , '$CurrOccVent' )" ;
 		$result=mysqli_query($db,$sqlQuery);  
 		
-		include('updatedata.php');
 			if($result)
 				echo " <br/><center> The current data added successfully  ! </center> ";
 			else
 				echo " <br/><center> This current data not added successfully  ! </center> ";	   
-       
+			
+			header("Location: updatedata.php");
 ?>
 		   
 

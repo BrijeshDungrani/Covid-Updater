@@ -30,14 +30,13 @@
 
 		$sqlQuery="INSERT INTO casedetail (CaseDate,TodTotCon,TodTotRec,TodTotDea) VALUES ('$CaseDate' , '$TodTotCon' , '$TodTotRec' , '$TodTotDea' )" ;
 		$result=mysqli_query($db,$sqlQuery);  
-					
-		include('CaseData1.php');
+			
 		if($result)
 			echo " <br/> The cases added successfully  !  ";
 		else
 			echo " <br/> The cases not added successfully  !  ";
 			
-       
+			header("Location: CaseData1.php");
 ?>
  </div>
  </body>
