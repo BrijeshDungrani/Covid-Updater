@@ -11,119 +11,12 @@
 
 </head>
 <script>
-$.ajax({
-    url: "https://api.covid19india.org/csv/latest/state_wise.csv",
-    dataType: "text",
-    success: function(data) {
-        var covid_data = data.split(/\r?\n|\r/);
-        var table_data = '<table class="table table-bordered table-striped table1">';
-        var IndConf = covid_data[1].split(",")[1];
-        var IndRec = covid_data[1].split(",")[2];
-        var IndDeaths = covid_data[1].split(",")[3];
-        var IndActive = covid_data[1].split(",")[4];
-        var DelConf = covid_data[2].split(",")[1];
-
-
-        cnfm = '<h1>' + IndConf + '</h1>'
-        hIndRec = '<h1>' + IndRec + '</h1>'
-        hIndDeaths = '<h1>' + IndDeaths + '</h1>'
-        hIndActive = '<h1>' + IndActive + '</h1>'
-
-        hDelConf = '<h1>' + DelConf + '</h1>'
-        //$('#covid_table').html(table_data);
-        $('#IndConf').html(cnfm);
-        $('#IndRec').html(hIndRec);
-        $('#IndActive').html(hIndActive);
-        $('#IndDeaths').html(hIndDeaths);
-        $('#DelConf').html(hDelConf);
-
-
-
-
-
-
-
-
-    }
-});
-
    
-function displayCoronaTable(){
-    
-    $.ajax({
-     url:"https://api.covid19india.org/csv/latest/state_wise.csv",
-     dataType:"text",
-     success:function(data)
-     {
-      var covid_data = data.split(/\r?\n|\r/);
-      var table_data = '<table class="table table-bordered table-striped table1">';
-      var IndConf = covid_data[1].split(",")[1];
-       var IndRec = covid_data[1].split(",")[2];
-       var IndDeaths = covid_data[1].split(",")[3];
-       var IndActive = covid_data[1].split(",")[4];
-      for(var count = 0; count<covid_data.length; count++)
-      {
-       var cell_data = covid_data[count].split(",");
-      
-       table_data += '<tr>';
-       
-       for(var cell_count=0; cell_count<cell_data.length; cell_count++)
-       {
-          if(cell_count <= 5 )
-          {
-        if(count === 0)
-        {
-            
-         table_data += '<th>'+cell_data[cell_count]+'</th>';
-            
-        }
-        else
-        {
-             var val = cell_data[cell_count];
-            if(val.length <= 45)
-            {
-                if(val == "Delhi")
-                {
-                    var DelhiCase = cell_data[1] + "-" +cell_data[2]+"-"+cell_data[3]+"-"+cell_data[4];
-                    var DelhiCase = DelhiCase.split("-");
-                }
-                
-                table_data += '<td>'+cell_data[cell_count]+'</td>';
-            }
-        }
-      }
-       }
-       table_data += '</tr>';
-      }
 
-      table_data += '</table>';
-      abc = '<h1>'+DelhiCase[2]+'</h1>'
-      $('#covid_table').html(table_data);
-      document.getElementById("DelConf").innerHTML = DelhiCase[0];
-      document.getElementById("DelRec").innerHTML = DelhiCase[1];
-      document.getElementById("DelDeaths").innerHTML = DelhiCase[2];
-      document.getElementById("DelActive").innerHTML = DelhiCase[3];
-     }
-    });
-   
-   
-  
-  }
-
-  
-
-
-window.onload = function(){
-    displayCoronaTable();
-
-    document.getElementById('covid_case').innerHTML = "IndConf";
-};
 
 </script>
 
-<body>
-
-
+<body onload="displayCoronaTable()">
     <div class=" cardrow">
         <div class="cardTitle">
             <h2>Delhi Covid-19</h2>
@@ -132,26 +25,26 @@ window.onload = function(){
             <div class="card" id="Totalcard" style="width: 20rem;">
                 <div class="card-body">
                     <h5 class="card-title">Confirmed</h5>
-                    <h1 class="card-text" id="DelConf"></h1>
+                    <h1 class="card-text" id="Dtotal_confirmed"></h1>
 
                 </div>
             </div>
             <div class="card" id="Activecard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Active </h5>
-                    <h1 class="card-text" id="DelActive"><script></script></h1>
+                    <h1 class="card-text" id="Dtotal_active"><script></script></h1>
                 </div>
             </div>
             <div class="card" id="Recoverycard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Recovered</h5>
-                    <h1 class="card-text" id="DelRec"></h1>
+                    <h1 class="card-text" id="Dtotal_recovered"></h1>
                 </div>
             </div>
             <div class="card" id="deathcard" style="width: 18rem">
                 <div class="card-body">
                     <h5 class="card-title">Death</h5>
-                    <h1 class="card-text" id="DelDeaths"></h1>
+                    <h1 class="card-text" id="Dtotal_death"></h1>
                 </div>
             </div>
         </div>
@@ -243,26 +136,26 @@ window.onload = function(){
             <div class="card" id="Totalcard" style="width: 20rem;">
                 <div class="card-body">
                     <h5 class="card-title">Confirmed</h5>
-                    <p class="card-text" id="IndConf"></p>
+                    <h1 class="card-text" id="total_confirmed"></h1>
 
                 </div>
             </div>
             <div class="card" id="Activecard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Active </h5>
-                    <p class="card-text" id="IndActive"></p>
+                    <h1 class="card-text" id="total_active"></h1>
                 </div>
             </div>
             <div class="card" id="Recoverycard" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Recovered</h5>
-                    <p class="card-text" id="IndRec"></p>
+                    <h1 class="card-text" id="total_recovered"></h1>
                 </div>
             </div>
             <div class="card" id="deathcard" style="width: 18rem">
                 <div class="card-body">
                     <h5 class="card-title">Death</h5>
-                    <p class="card-text" id="IndDeaths"></p>
+                    <h1 class="card-text" id="total_death"></h1>
                 </div>
             </div>
         </div>
@@ -278,6 +171,9 @@ window.onload = function(){
     <br />
     <div id="covid_table">
     </div>
+    <canvas id = "myChart1">
+
+    </canvas>
     
    </div>
   </div>
