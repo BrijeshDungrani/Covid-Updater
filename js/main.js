@@ -360,10 +360,6 @@ $(document).ready(function () {
     })
 })
 
-
-  
- 
-
   
 
 
@@ -418,3 +414,23 @@ $(document).ready(function () {
 
 //location
 
+//lattitude longtitude
+function getLonLat() {
+    var addrs = document.getElementById("addr").value;
+   var settings = {
+       "async": true,
+       "crossDomain": true,
+       "url": "https://us1.locationiq.com/v1/search.php?key=1d3d1d3cfb474b&q=" + addrs + "&format=json",
+       "method": "GET"
+   }
+   var lon
+   var lat
+   $.ajax(settings).done(function (response) {
+        lon = response[0].lon
+        lat = response[0].lat
+        console.log(lon,lat)
+        document.getElementById("lon").value = lon;
+       document.getElementById("lat").value = lat;
+   });
+   
+}

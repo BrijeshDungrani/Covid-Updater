@@ -7,10 +7,10 @@
 </head>
 
 <body>
-    <input type="text" id="addr">
+    <!-- <input type="text" id="addr">
     <button onclick=getLonLat()>click</button>
     <p id = "lon"></p>
-    <p id = "lat"></p>
+    <p id = "lat"></p> -->
     
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -29,9 +29,9 @@
 		$.ajax(settings).done(function (response) {
 			 lon = response[0].lon
              lat = response[0].lat
-             console.log(lon,addrs)
-             document.getElementById("lon").innerHTML = lon;
-            document.getElementById("lat").innerHTML = lat;
+             console.log(lon,lat)
+             document.getElementById("lon").value = lon;
+            document.getElementById("lat").value = lat;
 		});
         
     }
