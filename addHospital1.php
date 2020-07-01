@@ -41,6 +41,9 @@
 
                 <!-- addrres -->
                 <input type="text" name="Address" class="form-control mb-4" placeholder="Address">
+                
+                <input type="text" name="lat" class="form-control mb-4" placeholder="Lattitude">
+                <input type="text" name="lon" class="form-control mb-4" placeholder="Longtitude">
                 <!-- phone -->
                 <input type="number" name="phone" class="form-control mb-4" placeholder="Contact No">             
                 <!-- Subject -->

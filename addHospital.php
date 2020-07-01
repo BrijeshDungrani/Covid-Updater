@@ -24,15 +24,19 @@
  <?php 
 		$HospName=$_POST['HospName'];
 		$Address=$_POST['Address'];
+		$lat=$_POST['lat'];
+		$lon=$_POST['lon'];
 		$HosType=$_POST['HosType'];
 		$TotBed=$_POST['TotBed'];
 		$TotVent=$_POST['TotVent'];
 		$phone=$_POST['phone'];
 		$Entrydate= date("Y-m-d H:i:s");
 		$l=strlen($phone);
+		echo $lat;
+		echo $lon;
 		if($l<=15)
 		{
-		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent,phone) VALUES ('$HospName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent', '$phone')" ;
+		$sqlQuery="INSERT INTO hospital (HospName,Address,HosType,TotBed,TotVent,phone,lat,lon) VALUES ('$HospName' , '$Address' , '$HosType' , '$TotBed' , '$TotVent', '$phone', '$lat', '$lon')" ;
 		$result=mysqli_query($db,$sqlQuery);  
 
 		if($result)
@@ -56,8 +60,9 @@
 			echo "please enter correct phone number !";	    
 			
 		header("Location: addHospital1.php");
+		//include('addHospital1.php');
        
-?>
+		?>
 		
  </div>
  </body>
