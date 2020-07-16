@@ -237,6 +237,8 @@ function displayCoronaTable(){
         else if(count != 1)
         {
              var val = cell_data[cell_count];
+
+
             if(val.length <= 45 && val != '"')
             {
                 table_data += '<td>'+cell_data[cell_count]+'</td>';
@@ -253,9 +255,6 @@ function displayCoronaTable(){
 
      }
     });
-   
-   
-  
   }
 
   
