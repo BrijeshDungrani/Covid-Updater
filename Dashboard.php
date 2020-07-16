@@ -31,7 +31,7 @@
                         </div>
                         <div class="card-Today">
                         
-                            <h5>+44</h5>
+                            <!-- <h5>+44</h5> -->
                         </div>
                     </div>
 

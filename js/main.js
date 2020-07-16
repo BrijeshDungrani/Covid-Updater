@@ -54,7 +54,7 @@ $( function() {
 
 
 $(document).ready(function () {
-  $(".table td:nth-child(9)").each(function () {
+  $(".table td:nth-child(6)").each(function () {
       if (parseInt($(this).text(), 10) > 50 ) {
           $(this).parent("tr").css("background-color", "lightgreen");
       }
@@ -101,6 +101,7 @@ var lon,lat ;
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+    
   } else { 
     // x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -108,10 +109,14 @@ function getLocation() {
 
 function showPosition(position) {
     
-    lon = position.coords.latitude;
-    lat = position.coords.longitude;
+    lon = position.coords.longitude;
+    lat = position.coords.latitude;
     
-    //prompt(lon,lat);
+    
+    console.log(lon,lat);
+    document.getElementById("lon").innerHTML = lon;
+    document.getElementById("lat").innerHTML = lat;
+    return lon,lat
 //   x.innerHTML = "Latitude: " + position.coords.latitude + 
 //   "<br>Longitude: " + position.coords.longitude;
 }
