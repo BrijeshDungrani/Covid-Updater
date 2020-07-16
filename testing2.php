@@ -7,13 +7,8 @@
 </head>
 
 <body>
-<<<<<<< HEAD
     <input type="text" id="addr">
     <button onclick=getDistance()>click</button>
-=======
-    <!-- <input type="text" id="addr">
-    <button onclick=getLonLat()>click</button>
->>>>>>> cad0c6f2999e7dd739ef16479ab89b4ada03f83b
     <p id = "lon"></p>
     <p id = "lat"></p> -->
     
