@@ -10,7 +10,6 @@ function getLocation() {
     // x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
-
 function showPosition(position) {
     
     lon = position.coords.longitude;
@@ -19,7 +18,7 @@ function showPosition(position) {
     // <?php  
     // $lat = lat;
     // $long = lon; ?>
-    // console.log(lon,lat);
+     console.log(lon,lat);
     // document.getElementById("lon").innerHTML = lon;
     // document.getElementById("lat").innerHTML = lat;
     return lon,lat
@@ -27,6 +26,9 @@ function showPosition(position) {
 //   "<br>Longitude: " + position.coords.longitude;
 }
 </script>
+<?php 
+ $lat = 22.32;
+ $long = 78.50; ?>
 <div class="card-header bedheader">
     <i class="fas fa-table mr-1"></i>
     <h3>COvid -19 Beds</h3>
