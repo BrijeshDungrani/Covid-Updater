@@ -17,6 +17,7 @@
   background-size: 100% 100%;
 }
 </style>
+
 <center><h1>Regional covid-19 Updater</h1></center>
 </head>
 
