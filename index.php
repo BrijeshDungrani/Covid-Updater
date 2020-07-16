@@ -23,27 +23,25 @@
 <body>
 <header>
 <body>
+<div class="container row">
+            <!-- Default form contact -->
+            <center>
 <form action="action_page.php" method="post">
- 
-<div class="row">
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-6">
   
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" required>
 
-    <label for="password"><b>Password</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>   
+
+    </br>
     <input type="password" placeholder="Enter Password" name="password" required>
 
-    <button type="submit" class="button" value="login" name="login">Login</button>
+    </br>
+    <input type="submit" class="button" value="login" name="login">
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+
+    </br>
+    <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
-    </div>
-        <div class="col-md-3">
-        </div>
+    </center>
     </div>
 </form>
 </header>

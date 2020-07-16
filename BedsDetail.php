@@ -1,7 +1,9 @@
 <?php include_once('header.html') ?>
 <script type= "text/javascript">
     var lon,lat ;
-
+    <?php 
+ $lat = 22.32;
+ $long = 78.50; ?>
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -16,8 +18,8 @@ function showPosition(position) {
     lat = position.coords.latitude;
     
     // <?php  
-    // $lat = lat;
-    // $long = lon; ?>
+     $lat = lat;
+     $long = lon; ?>
      console.log(lon,lat);
     // document.getElementById("lon").innerHTML = lon;
     // document.getElementById("lat").innerHTML = lat;
@@ -26,9 +28,8 @@ function showPosition(position) {
 //   "<br>Longitude: " + position.coords.longitude;
 }
 </script>
-<?php 
- $lat = 22.32;
- $long = 78.50; ?>
+
+ <body onload = "getLocation()">
 <div class="card-header bedheader">
     <i class="fas fa-table mr-1"></i>
     <h3>COvid -19 Beds</h3>
@@ -83,7 +84,7 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
                     <th>Address</th>
                     <!-- <th>Lat</th>
                     <th>Lon</th> -->
-                    <th>Distance</th>
+                    <!-- <th>Distance</th> -->
                     <th>Contact</th>
                     <th>Total Beds<i class="fa fa-sort"></i></th>
                     <th>Occupied Beds<i class="fa fa-sort"></i></th>
@@ -96,7 +97,7 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
                     <th>Address</th>
                     <!-- <th>Lat</th>
                     <th>Lon</th> -->
-                    <th>Distance</th>
+                    <!-- <th>Distance</th> -->
                     <th>Contact</th>
                     <th>Total Beds</th>
                     <th>Occupied Beds</th>
@@ -125,7 +126,7 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
             echo '<td>'.$row1['Address'].' ('.geoDistance($lat,$long,$row1['latitude'],$row1['longitude'],6371000).' Km)'.'</td>';
             // echo '<td>'.$row1['latitude'].'</td>';
             // echo '<td>'.$row1['longitude'].'</td>';
-            echo '<td>'.geoDistance($lat,$long,$row1['latitude'],$row1['longitude'],6371000).'</td>';
+            // echo '<td>'.geoDistance($lat,$long,$row1['latitude'],$row1['longitude'],6371000).'</td>';
             echo '<td>'.$row1['phone'].'</td>';
             echo '<td>'.$row1['TotBed'].'</td>';
             echo '<td>'.$row['CurrOccBed'].'</td>';
@@ -144,3 +145,4 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
     </div>
 </div>
 </div>
+</body>
