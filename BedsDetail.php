@@ -2,6 +2,9 @@
 <script type="text/javascript">
 var lon, lat;
 
+<?php
+$lat = 28.468180;
+$long = 77.212570; ?>
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -9,29 +12,39 @@ function getLocation() {
     } else {
         // x.innerHTML = "Geolocation is not supported by this browser.";
     }
-}
+} 
 
 function showPosition(position) {
 
     lon = position.coords.longitude;
     lat = position.coords.latitude;
 
-    // <?php  
-    $lat = lat;
-    $long = lon; ? >
+    document.getElementById("hiddenlon").value = lon;
+    document.getElementById("hiddenlat").value = lat;
+
+    document.cookie = "javascriptlon = " + lon;
+    document.cookie = "javascriptlat = " + lat;
+    //  <?php  
+    // $long = $_COOKIE['javascriptlon'];
+    // $lat = $_COOKIE['javascriptlat'];
+   
+    
+    // $long = lon; ?>
     console.log(lon, lat);
     // document.getElementById("lon").innerHTML = lon;
     // document.getElementById("lat").innerHTML = lat;
+    var table = document.getElementById ("dataTable");
+    table.refresh ();
     return lon, lat
     //   x.innerHTML = "Latitude: " + position.coords.latitude + 
     //   "<br>Longitude: " + position.coords.longitude;
 }
 </script>
-<?php 
- $lat = 22.32;
- $long = 78.50; ?>
 
 <body onload="getLocation()">
+<!-- <input type="text" style="display:none" id="hiddenlat" />
+<input type="text" style="display:none" id="hiddenlon" /> -->
+
     <div class="card-header bedheader">
         <i class="fas fa-table mr-1"></i>
         <h3>COvid -19 Beds</h3>
@@ -41,7 +54,8 @@ function showPosition(position) {
         <?php
 function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
 {
-    
+    if($latitudeFrom != 0)
+    {
   // convert from degrees to radians
   $latFrom = deg2rad($latitudeFrom);
   $lonFrom = deg2rad($longitudeFrom);
@@ -54,6 +68,7 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
   $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
     cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
   return round($angle * $earthRadius * 1.60934/1000,2,PHP_ROUND_HALF_ODD);
+    }
 }
    
  
@@ -89,8 +104,8 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
                     <tr>
                         <th>Hospital<i class="fa fa-sort"></i></th>
                         <th>Address</th>
-                        <!-- <th>Lat</th>
-                    <th>Lon</th> -->
+                    //     <!-- <th>Lat</th>
+                    // <th>Lon</th> -->
                         <th>Distance from You (Km)</th>
                         <th>Contact</th>
                         <th>Total Beds<i class="fa fa-sort"></i></th>
@@ -131,9 +146,9 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
             echo '<tr>';
             echo '<td>'.$row1['HospName'].'</td>'; 
             echo '<td>'.$row1['Address'].'</td>';
-            // echo '<td>'.$row1['latitude'].'</td>';
+            //x echo '<td>'.$row1['latitude'].'</td>';
             // echo '<td>'.$row1['longitude'].'</td>';
-            echo '<td>'.geoDistance($lat,$long,$row1['latitude'],$row1['longitude'],6371000).'</td>';
+            echo '<td>'     .geoDistance($lat,$long,$row1['latitude'],$row1['longitude'],6371000).'</td>';
             echo '<td>'.$row1['phone'].'</td>';
             echo '<td>'.$row1['TotBed'].'</td>';
             echo '<td>'.$row['CurrOccBed'].'</td>';

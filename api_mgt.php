@@ -1,75 +1,71 @@
 <script>
-function displayCoronaTable(){
-    
+function displayCT() {
+
     $.ajax({
-     url:"https://api.covid19india.org/csv/latest/state_wise.csv",
-     dataType:"text",
-     success:function(data)
-     {
-      var covid_data = data.split(/\r?\n|\r/);
-      var table_data = '<table class="table table-bordered table-striped table3">';
-      
-      for(var count = 0; count<covid_data.length; count++)
-      {
-       var cell_data = covid_data[count].split(",");
-      
-       table_data += '<tr>';
-       
+        url: "https://api.covid19india.org/csv/latest/state_wise.csv",
+        dataType: "text",
+        success: function(data) {
+            var covid_data = data.split(/\r?\n|\r/);
+            var table_data = '<table class="table table-bordered table-striped table3">';
 
-       
-       
-       for(var cell_count=0; cell_count<cell_data.length; cell_count++)
-       {
-          if(cell_count <= 5 )
-          {
-        if(count === 0)
-        {
-            
-         table_data += '<th>'+cell_data[cell_count]+'</th>';
-            
-        }
-        else if(count != 1)
-        {
+            for (var count = 0; count < covid_data.length; count++) {
+                var cell_data = covid_data[count].split(",");
 
-            <?php include('connection.php');
+                table_data += '<tr>';
 
-            $state=cell_data[0];
-            $cnf=cell_data[1];
-            $rec=cell_data[2];
-            $death=cell_data[3];
-            $act=cell_data[4];
-            $date=cell_data[5];
 
-             $sqlQuery="INSERT INTO ind_dashboard (`state`, `cnf`, `rec`, `death`, `act`, `date`) VALUES (`$state`, `$cnf`, `$rec`, `$death`, `$act`, `$date`)";
-             $result=mysqli_query($db,$sqlQuery);  
 
-            if($result)
-			echo " </br> The Hospital data added successfully  !  ";
-		    else
-			echo " <br/> The Hospital data not added successfully  !  ";
-            ?>
 
-             var val = cell_data[cell_count];
+                for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                    if (cell_count <= 5) {
+                        if (count === 0) {
 
-            if(val.length <= 45 && val != '"')
-            {
-                table_data += '<td>'+cell_data[cell_count]+'</td>';
+                            table_data += '<th>' + cell_data[cell_count] + '</th>';
+
+                        } else if (count != 1) {
+
+
+
+                            var val = cell_data[cell_count];
+
+                            var Dbstate = cell_data[0];
+                            var Dbcnf = cell_data[1];
+                            var Dbrec = cell_data[2];
+                            var Dbdeath = cell_data[3];
+                            var Dbact = cell_data[4];
+                            var Dbdate = cell_data[5];
+                            <? php include('connection.php');
+
+                           
+
+                            $sqlQuery =
+                                "INSERT INTO ind_dashboard (`state`, `cnf`, `rec`, `death`, `act`, `date`) VALUES (`$state`, `$cnf`, `$rec`, `$death`, `$act`, `$date`)";
+                            $result = mysqli_query($db, $sqlQuery);
+
+                            if ($result)
+                                echo " </br> The Hospital data added successfully  !  ";
+                            else
+                                echo " <br/> The Hospital data not added successfully  !  "; 
+                                ?>
+
+
+
+                           
+                        }
+                    }
+                }
+                table_data += '</tr>';
             }
+
+            table_data += '</table>';
+
+            //$('#covid_table').html(table_data);
+
         }
-      }
-       }
-       table_data += '</tr>';
-      }
-
-      table_data += '</table>';
-     
-      //$('#covid_table').html(table_data);
-
-     }
     });
-   
-   
-  }
 
-displayCoronaTable();
+
+}
+
 </script>
+<body onload = "displayCT()"></body>

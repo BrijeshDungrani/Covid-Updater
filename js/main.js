@@ -54,7 +54,7 @@ $( function() {
 
 
 $(document).ready(function () {
-  $(".table td:nth-child(6)").each(function () {
+  $(".table td:nth-child(7)").each(function () {
       if (parseInt($(this).text(), 10) > 50 ) {
           $(this).parent("tr").css("background-color", "lightgreen");
       }
