@@ -3,8 +3,10 @@
 var lon, lat;
 
 <?php
-$lat = 28.468180;
-$long = 77.212570; ?>
+$lat = 0;
+$long = 0;
+$lcn = 0;
+ ?>
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -12,48 +14,45 @@ function getLocation() {
     } else {
         // x.innerHTML = "Geolocation is not supported by this browser.";
     }
-} 
+}
+
+var buttons = document.querySelectorAll("[id='hiddenlon']");
+var buttontext;
+for(var i=0; i<buttons.length; i++){
+    buttons[i].addEventListener("click", function(){buttontext=this.innerHTML;
+   // alert(buttontext);
+    console.log(buttontext)
+   }
+  )
+}
 
 function showPosition(position) {
 
     lon = position.coords.longitude;
     lat = position.coords.latitude;
 
-    document.getElementById("hiddenlon").value = lon;
-    document.getElementById("hiddenlat").value = lat;
-
-    document.cookie = "javascriptlon = " + lon;
-    document.cookie = "javascriptlat = " + lat;
-    //  <?php  
-    // $long = $_COOKIE['javascriptlon'];
-    // $lat = $_COOKIE['javascriptlat'];
-   
-    
-    // $long = lon; ?>
-    console.log(lon, lat);
-    // document.getElementById("lon").innerHTML = lon;
-    // document.getElementById("lat").innerHTML = lat;
-    var table = document.getElementById ("dataTable");
-    table.refresh ();
     return lon, lat
-    //   x.innerHTML = "Latitude: " + position.coords.latitude + 
-    //   "<br>Longitude: " + position.coords.longitude;
+   
 }
+
+document.getElementById("red").onclick = function () {
+        location.href = "www.yoursite.com";
+    };
 </script>
 
 <body onload="getLocation()">
-<!-- <input type="text" style="display:none" id="hiddenlat" />
-<input type="text" style="display:none" id="hiddenlon" /> -->
 
-    <div class="card-header bedheader">
-        <i class="fas fa-table mr-1"></i>
-        <h3>COvid -19 Beds</h3>
-    </div>
+
+    <p type="text" style="margin:100px"  id="hiddenlat"></p>
+<p type="text" style="margin:100px"  id="hiddenlon"> </p>
+
+   
     <div>
 
         <?php
 function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
 {
+    
     if($latitudeFrom != 0)
     {
   // convert from degrees to radians
@@ -93,7 +92,8 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
             <div class="availability">
                 <h5 style="background-color: #FFB6C1;">&nbsp No Bed &nbsp</h5>
             </div>
-            <div class="availability"><button onclick="getLocation()">Nearby Hospital</button></div>
+            <!-- <div class="availability"><button onclick="getLocation()">Nearby Hospital</button></div> -->
+            <div class="availability"><button onclick="location.href = '?long='+lon+'&lat='+lat;" id="myButton" class="float-left submit-button" >Nearby Hospital</button></div>
 
         </div>
     </div>
@@ -104,7 +104,8 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
                     <tr>
                         <th>Hospital<i class="fa fa-sort"></i></th>
                         <th>Address</th>
-                    //     <!-- <th>Lat</th>
+                        //
+                        <!-- <th>Lat</th>
                     // <th>Lon</th> -->
                         <th>Distance from You (Km)</th>
                         <th>Contact</th>
@@ -129,8 +130,16 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
                 <tbody>
 
                     <?php 
+                    $long =0;
+                    $lat =0;
+                    if(isset($_GET['long']) or isset($_GET['lat'])){
+                   $long = $_GET['long'];
+                   $lat =$_GET['lat'];
+                    }
+                   
        include('connection.php'); 
-
+    //    $lat = 28.468180;
+    //    $long = 77.212570;        
         $sqlQuery= "select * from hospdata";
         $result=mysqli_query($db,$sqlQuery); 
 
@@ -160,7 +169,8 @@ function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $
 
 
         
-?>
+    
+    ?>
                     </tr>
                 </tbody>
             </table>
