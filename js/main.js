@@ -4,67 +4,67 @@
 
 ////TABLE SORTING
 
-$(document).ready(function() {
-  $('th').each(function(col) {
-      $(this).hover(
-          function() {
-              $(this).addClass('focus');
-          },
-          function() {
-              $(this).removeClass('focus');
-          }
-      );
-      $(this).click(function() {
-          if ($(this).is('.asc')) {
-              $(this).removeClass('asc');
-              $(this).addClass('desc selected');
-              sortOrder = -1;
-          } else {
-              $(this).addClass('asc selected');
-              $(this).removeClass('desc');
-              sortOrder = 1;
-          }
-          $(this).siblings().removeClass('asc selected');
-          $(this).siblings().removeClass('desc selected');
-          var arrData = $('table').find('tbody >tr:has(td)').get();
-          arrData.sort(function(a, b) {
-              var val1 = $(a).children('td').eq(col).text().toUpperCase();
-              var val2 = $(b).children('td').eq(col).text().toUpperCase();
-              if ($.isNumeric(val1) && $.isNumeric(val2))
-                  return sortOrder == 1 ? val1 - val2 : val2 - val1;
-              else
-                  return (val1 < val2) ? -sortOrder : (val1 > val2) ? sortOrder : 0;
-          });
-          $.each(arrData, function(index, row) {
-              $('tbody').append(row);
-          });
-      });
-  });
+$(document).ready(function () {
+    $('th').each(function (col) {
+        $(this).hover(
+            function () {
+                $(this).addClass('focus');
+            },
+            function () {
+                $(this).removeClass('focus');
+            }
+        );
+        $(this).click(function () {
+            if ($(this).is('.asc')) {
+                $(this).removeClass('asc');
+                $(this).addClass('desc selected');
+                sortOrder = -1;
+            } else {
+                $(this).addClass('asc selected');
+                $(this).removeClass('desc');
+                sortOrder = 1;
+            }
+            $(this).siblings().removeClass('asc selected');
+            $(this).siblings().removeClass('desc selected');
+            var arrData = $('table').find('tbody >tr:has(td)').get();
+            arrData.sort(function (a, b) {
+                var val1 = $(a).children('td').eq(col).text().toUpperCase();
+                var val2 = $(b).children('td').eq(col).text().toUpperCase();
+                if ($.isNumeric(val1) && $.isNumeric(val2))
+                    return sortOrder == 1 ? val1 - val2 : val2 - val1;
+                else
+                    return (val1 < val2) ? -sortOrder : (val1 > val2) ? sortOrder : 0;
+            });
+            $.each(arrData, function (index, row) {
+                $('tbody').append(row);
+            });
+        });
+    });
 });
 ///change sorting icon color
-$( function() {
-  $('th').click( function() {
-    $('th').children().css('color', 'darkgreen')
-    $(this).children().css('color', 'white')
-  } );
-} );
+$(function () {
+    $('th').click(function () {
+        $('th').children().css('color', 'darkgreen')
+        $(this).children().css('color', 'white')
+    });
+});
 
 
 ////
 
 
 $(document).ready(function () {
-  $(".table td:nth-child(7)").each(function () {
-      if (parseInt($(this).text(), 10) > 50 ) {
-          $(this).parent("tr").css("background-color", "lightgreen");
-      }
-      if (parseInt($(this).text(), 10) < 50 ) {
-          $(this).parent("tr").css("background-color", "#FFFF99");
-      }
-      if (parseInt($(this).text(), 10) == 0 ) {
-          $(this).parent("tr").css("background-color", "#FFB6C1");
-      }
-  });
+    $(".table td:nth-child(7)").each(function () {
+        if (parseInt($(this).text(), 10) > 50) {
+            $(this).parent("tr").css("background-color", "lightgreen");
+        }
+        if (parseInt($(this).text(), 10) < 50) {
+            $(this).parent("tr").css("background-color", "#FFFF99");
+        }
+        if (parseInt($(this).text(), 10) == 0) {
+            $(this).parent("tr").css("background-color", "#FFB6C1");
+        }
+    });
 });
 
 
@@ -72,53 +72,53 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $(".table1 td:nth-child(6)").each(function () {
-        if (parseInt($(this).text(), 10) > 15 ) {
+        if (parseInt($(this).text(), 10) > 15) {
             $(this).parent("tr").css("background-color", "lightgreen");
         }
-        if (parseInt($(this).text(), 10) < 15 ) {
+        if (parseInt($(this).text(), 10) < 15) {
             $(this).parent("tr").css("background-color", "#FFFF99");
         }
-        if (parseInt($(this).text(), 10) == 0 ) {
+        if (parseInt($(this).text(), 10) == 0) {
             $(this).parent("tr").css("background-color", "#FFB6C1");
         }
     });
-  });
+});
 
 /// header mobile
-$(document).ready(function() {
+$(document).ready(function () {
 
-  // SideNav Button Initialization
-  $(".button-collapse").sideNav();
-  // SideNav Scrollbar Initialization
-  var sideNavScrollbar = document.querySelector('.custom-scrollbar');
-  var ps = new PerfectScrollbar(sideNavScrollbar);
+    // SideNav Button Initialization
+    $(".button-collapse").sideNav();
+    // SideNav Scrollbar Initialization
+    var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+    var ps = new PerfectScrollbar(sideNavScrollbar);
 })
 
 // get user location
 
-var lon,lat ;
+var lon, lat;
 
 function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-    
-  } else { 
-    // x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+
+    } else {
+        // x.innerHTML = "Geolocation is not supported by this browser.";
+    }
 }
 
 function showPosition(position) {
-    
+
     lon = position.coords.longitude;
     lat = position.coords.latitude;
-    
-    
-    console.log(lon,lat);
+
+
+    console.log(lon, lat);
     document.getElementById("lon").innerHTML = lon;
     document.getElementById("lat").innerHTML = lat;
-    return lon,lat
-//   x.innerHTML = "Latitude: " + position.coords.latitude + 
-//   "<br>Longitude: " + position.coords.longitude;
+    return lon, lat
+    //   x.innerHTML = "Latitude: " + position.coords.latitude + 
+    //   "<br>Longitude: " + position.coords.longitude;
 }
 
 
@@ -127,19 +127,19 @@ $(document).ready(function () {
     var url = "https://api.covid19india.org/data.json"
 
     $.getJSON(url, function (data) {
-        
+
 
         var total_active, total_recovered, total_death, total_confirmed
         var Dtotal_active, Dtotal_recovered, Dtotal_death, Dtotal_confirmed
 
 
-        
+
         var state = []
         var confirmed = []
         var recovered = []
         var deaths = []
 
-        $.each(data.statewise,function(id,obj){
+        $.each(data.statewise, function (id, obj) {
             state.push(obj.state)
             confirmed.push(obj.confirmed)
             recovered.push(obj.recovered)
@@ -208,56 +208,72 @@ $(document).ready(function () {
 
 /// display indian corona table
 
-function displayCoronaTable(){
-    
+function displayCoronaTable() {
+
+
     $.ajax({
-     url:"https://api.covid19india.org/csv/latest/state_wise.csv",
-     dataType:"text",
-     success:function(data)
-     {
-      var covid_data = data.split(/\r?\n|\r/);
-      var table_data = '<table class="table table-bordered table-striped table3">';
-      
-      for(var count = 0; count<covid_data.length; count++)
-      {
-       var cell_data = covid_data[count].split(",");
-      
-       table_data += '<tr>';
-       
-       for(var cell_count=0; cell_count<cell_data.length; cell_count++)
-       {
-          if(cell_count <= 5 )
-          {
-        if(count === 0)
-        {
-            
-         table_data += '<th>'+cell_data[cell_count]+'</th>';
-            
+
+        url : 'extra.php',
+        type : 'POST',
+        success : function (result) {
+           console.log (result); // Here, you need to use response by PHP file.
+        },
+        error : function () {
+           console.log ('error');
         }
-        else if(count != 1)
-        {
-             var val = cell_data[cell_count];
+   
+      });
 
 
-            if(val.length <= 45 && val != '"')
-            {
-                table_data += '<td>'+cell_data[cell_count]+'</td>';
+
+
+
+
+
+    $.ajax({
+        url: "https://api.covid19india.org/csv/latest/state_wise.csv",
+        dataType: "text",
+        success: function (data) {
+            var covid_data = data.split(/\r?\n|\r/);
+            var table_data = '<table class="table table-bordered table-striped table3">';
+
+
+            
+
+            for (var count = 0; count < covid_data.length; count++) {
+                var cell_data = covid_data[count].split(",");
+
+                table_data += '<tr>';
+
+                for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                    if (cell_count <= 5) {
+                        if (count === 0) {
+
+                            table_data += '<th>' + cell_data[cell_count] + '</th>';
+
+                        }
+                        else if (count != 1) {
+                            var val = cell_data[cell_count];
+
+
+                            if (val.length <= 45 && val != '"' && val != '--') {
+                                table_data += '<td>' + cell_data[cell_count] + '</td>';
+                            }
+                        }
+                    }
+                }
+                table_data += '</tr>';
             }
+
+            table_data += '</table>';
+
+            $('#covid_table').html(table_data);
+
         }
-      }
-       }
-       table_data += '</tr>';
-      }
-
-      table_data += '</table>';
-     
-      $('#covid_table').html(table_data);
-
-     }
     });
-  }
+}
 
-  
+
 
 $(document).ready(function () {
     var url = "https://api.covid19india.org/states_daily.json"
@@ -364,7 +380,7 @@ $(document).ready(function () {
     })
 })
 
-  
+
 
 
 /// find neaby hospitals 
@@ -421,20 +437,20 @@ $(document).ready(function () {
 //lattitude longtitude
 function getLonLat() {
     var addrs = document.getElementById("addr").value;
-   var settings = {
-       "async": true,
-       "crossDomain": true,
-       "url": "https://us1.locationiq.com/v1/search.php?key=1d3d1d3cfb474b&q=" + addrs + "&format=json",
-       "method": "GET"
-   }
-   var lon
-   var lat
-   $.ajax(settings).done(function (response) {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://us1.locationiq.com/v1/search.php?key=1d3d1d3cfb474b&q=" + addrs + "&format=json",
+        "method": "GET"
+    }
+    var lon
+    var lat
+    $.ajax(settings).done(function (response) {
         lon = response[0].lon
         lat = response[0].lat
-        console.log(lon,lat)
+        console.log(lon, lat)
         document.getElementById("lon").value = lon;
-       document.getElementById("lat").value = lat;
-   });
-   
+        document.getElementById("lat").value = lat;
+    });
+
 }

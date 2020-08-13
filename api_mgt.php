@@ -5,6 +5,8 @@ function displayCT() {
         url: "https://api.covid19india.org/csv/latest/state_wise.csv",
         dataType: "text",
         success: function(data) {
+
+            
             var covid_data = data.split(/\r?\n|\r/);
             var table_data = '<table class="table table-bordered table-striped table3">';
 
@@ -34,12 +36,12 @@ function displayCT() {
                             var Dbdeath = cell_data[3];
                             var Dbact = cell_data[4];
                             var Dbdate = cell_data[5];
-                            <? php include('connection.php');
+                            <?php include('connection.php');
 
                            
 
                             $sqlQuery =
-                                "INSERT INTO ind_dashboard (`state`, `cnf`, `rec`, `death`, `act`, `date`) VALUES (`$state`, `$cnf`, `$rec`, `$death`, `$act`, `$date`)";
+                                "INSERT INTO ind_dashboard (`state`, `cnf`, `rec`, `death`, `act`, `date`) VALUES (`hhhh`, `$cnf`, `$rec`, `$death`, `$act`, `$date`)";
                             $result = mysqli_query($db, $sqlQuery);
 
                             if ($result)
@@ -64,7 +66,18 @@ function displayCT() {
         }
     });
 
+  $.ajax({
 
+     url : 'extra.php',
+     type : 'POST',
+     success : function (result) {
+        console.log (result); // Here, you need to use response by PHP file.
+     },
+     error : function () {
+        console.log ('error');
+     }
+
+   });
 }
 
 </script>
