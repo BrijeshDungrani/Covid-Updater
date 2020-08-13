@@ -21,6 +21,7 @@
 <body >
         <div > 
 
+
  <?php 
 		$HospName=$_POST['HospName'];
 		$Address=$_POST['Address'];
